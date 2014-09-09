@@ -29,7 +29,7 @@ void draw(){
 }
 
 void setup() {
-  size(1000,670);
+  size(1000,660);
   background(0,0,0);
   frameRate(500000);
   noStroke();
