@@ -29,7 +29,7 @@ void draw(){
 }
 
 void setup() {
-  size(1000,650);
+  size(1000,680);
   background(0,0,0);
   frameRate(500000);
   noStroke();
@@ -44,7 +44,7 @@ void mousePressed() {
 	int dieX = -theSize/2;
 	int dieY = theSize/2;
 	for(int i = 0; i<diceArray.length-1; i++){
-		if(dieX + theSize < width){
+		if(dieX + theSize < 1000){
 			dieX +=  theSize + 1;
 		} else {
 			dieX =  -theSize/2;
