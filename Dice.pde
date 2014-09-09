@@ -44,12 +44,13 @@ void mousePressed() {
 	int dieX = -theSize/2;
 	int dieY = theSize/2;
 	for(int i = 0; i<diceArray.length-1; i++){
-		if(dieX + theSize < 995){
-			dieX +=  theSize + .5;
+		if(dieX + theSize < width){
+			dieX +=  theSize;
 		} else {
 			dieX =  -theSize/2;
-			dieY += theSize + .5;
+			dieY += theSize + 1;
 		}
+		dieX+=1
 		diceArray[diceCount] =  new Die((int) (Math.random() * 6 + 1), dieX, dieY);
 		diceCount++;
 	}
