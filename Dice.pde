@@ -3,7 +3,7 @@ int dieX = 0;
 int dieY = theSize/2;
 int total = 0;
 
-Die[] diceArray = new Die[17419];
+Die[] diceArray = new Die[18359];
 int diceCount = 0;
 
 
