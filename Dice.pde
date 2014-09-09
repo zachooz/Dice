@@ -1,4 +1,4 @@
-int theSize = 4;
+int theSize = 5;
 int dieX = 0;
 int dieY = theSize/2;
 int total = 0;
