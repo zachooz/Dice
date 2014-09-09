@@ -45,10 +45,10 @@ void mousePressed() {
 	int dieY = theSize/2;
 	for(int i = 0; i<diceArray.length-1; i++){
 		if(dieX + theSize < 995){
-			dieX +=  theSize + 1;
+			dieX +=  theSize + .5;
 		} else {
 			dieX =  -theSize/2;
-			dieY += theSize + 1;
+			dieY += theSize + .5;
 		}
 		diceArray[diceCount] =  new Die((int) (Math.random() * 6 + 1), dieX, dieY);
 		diceCount++;
