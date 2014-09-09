@@ -43,7 +43,7 @@ void mousePressed() {
 	total = 0;
 	int dieX = -theSize/2;
 	int dieY = theSize/2;
-	for(int i = 0; i<diceArray.length-1; i++){
+	for(int i = 0; i<diceArray.length-2; i++){
 		if(dieX + theSize < width-1){
 			dieX +=  theSize;
 			dieX+=1;
