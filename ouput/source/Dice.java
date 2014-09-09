@@ -19,7 +19,7 @@ int dieX = 0;
 int dieY = theSize/2;
 int total = 0;
 
-Die[] diceArray = new Die[17399];
+Die[] diceArray = new Die[17419];
 int diceCount = 0;
 
 
@@ -40,12 +40,12 @@ public void draw(){
 	if(total == 0){
 		textSize(30);
 		fill(255,255,255);
-		text("Click to spawn dice!", width/3, height/2);	
+		text("Click to spawn "+ diceArray.length+ " dice!", width/3, height/2);	
 	}
 }
 
 public void setup() {
-  size(990, 630);
+  size(995, 635);
   background(0,0,0);
   frameRate(500000);
   noStroke();
@@ -102,8 +102,7 @@ public void drawText(){
 
 	textSize(10);
 	fill(255,255,255);
-	text("Total: " + total, width*10/12, height);
-	text("DicenNum: " +  diceArray.length, width*10.8f/12, height);
+	text("Sum: " +  total, width*11.2f/12, height);
 }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Dice" };
