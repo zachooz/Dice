@@ -1,9 +1,9 @@
-int theSize = 5;
+int theSize = 4;
 int dieX = 0;
 int dieY = theSize/2;
 int total = 0;
 
-Die[] diceArray = new Die[18361];
+Die[] diceArray = new Die[38937];
 int diceCount = 0;
 
 
@@ -14,7 +14,7 @@ public class Die{
 	int xPos;
 	int yPos;
 	Die(int side, int xPos, int yPos){
-		this.diceSize = 5;
+		this.diceSize = 4;
 		this.side = side;
 		this.xPos = xPos;
 		this.yPos = yPos;
@@ -24,12 +24,12 @@ void draw(){
 	if(total == 0){
 		textSize(30);
 		fill(255,255,255);
-		text("Click to spawn "+ diceArray.length+ " dice!", width/3, height/2);	
+		text("Click to spawn " + diceArray.length +" dice!", width/3, height/2);	
 	}
 }
 
 void setup() {
-  size(1000,660);
+  size(990, 630);
   background(0,0,0);
   frameRate(500000);
   noStroke();
@@ -43,15 +43,13 @@ void mousePressed() {
 	total = 0;
 	int dieX = -theSize/2;
 	int dieY = theSize/2;
-	for(int i = 0; i<diceArray.length-1; i++){
-		if(dieX + 2*theSize < width-1){
+	for(int i = 0; i<diceArray.length; i++){
+		if(dieX + theSize < 990){
 			dieX +=  theSize;
-			dieX+=1;
 		} else {
 			dieX =  -theSize/2;
-			dieY += theSize + 1;
+			dieY += theSize;
 		}
-		
 		diceArray[diceCount] =  new Die((int) (Math.random() * 6 + 1), dieX, dieY);
 		diceCount++;
 	}
@@ -61,7 +59,7 @@ void mousePressed() {
 
 void drawDice(){
 	for(int i = 0; i<diceArray.length-1; i++){
-		fill(255,255,255);
+		fill((int)(Math.random()*40+100),(int)(Math.random()*40+100),(int)(Math.random()*40+100));
 		rectMode(CENTER);
 		rect(diceArray[i].xPos, diceArray[i].yPos, diceArray[i].diceSize, diceArray[i].diceSize);
 		total += diceArray[i].side;
@@ -88,5 +86,6 @@ void drawText(){
 
 	textSize(10);
 	fill(255,255,255);
-	text("Sum: " +  total, width*11.3/12, height);
+	text("Total: " + total, width*10/12, height);
+	text("DicenNum: " +  diceArray.length, width*10.8/12, height);
 }
