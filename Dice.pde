@@ -3,7 +3,7 @@ int dieX = 0;
 int dieY = theSize/2;
 int total = 0;
 
-Die[] diceArray = new Die[18359];
+Die[] diceArray = new Die[18361];
 int diceCount = 0;
 
 
@@ -88,5 +88,5 @@ void drawText(){
 
 	textSize(10);
 	fill(255,255,255);
-	text("Sum: " +  total, width*11.2/12, height);
+	text("Sum: " +  total, width*11.3/12, height);
 }
