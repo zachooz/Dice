@@ -92,7 +92,7 @@ void drawText(){
 
 	textSize(10);
 	fill(255,255,255);
-	if(show=true){
+	if(show==true){
 		text("Sum: " + total, width*11.3/12, height);
 	}
 }
