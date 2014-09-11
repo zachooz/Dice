@@ -86,6 +86,5 @@ void drawText(){
 
 	textSize(10);
 	fill(255,255,255);
-	text("Total: " + total, width*10/12, height);
-	text("DicenNum: " +  diceArray.length, width*10.8/12, height);
+	text("Sum: " + total, width*11.3/12, height);
 }
