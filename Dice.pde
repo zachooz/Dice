@@ -2,6 +2,7 @@ int theSize = 4;
 int dieX = 0;
 int dieY = theSize/2;
 int total = 0;
+boolean show = true;
 
 Die[] diceArray = new Die[38937];
 int diceCount = 0;
@@ -55,6 +56,11 @@ void mousePressed() {
 	}
 	drawDice();
 	drawText();
+	if(show){
+		show = false;
+	} else {
+		show =true;
+	}
 }
 
 void drawDice(){
@@ -86,5 +92,7 @@ void drawText(){
 
 	textSize(10);
 	fill(255,255,255);
-	text("Sum: " + total, width*11.3/12, height);
+	if(show=true){
+		text("Sum: " + total, width*11.3/12, height);
+	}
 }
