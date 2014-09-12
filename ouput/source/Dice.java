@@ -20,7 +20,7 @@ int dieY = theSize/2;
 int total = 0;
 boolean show = false;
 
-Die[] diceArray = new Die[41415];
+Die[] diceArray = new Die[41917];
 int diceCount = 0;
 
 
@@ -46,7 +46,7 @@ public void draw(){
 }
 
 public void setup() {
-  size(1000, 660);
+  size(1000, 670);
   background(0,0,0);
   frameRate(500000);
   noStroke();

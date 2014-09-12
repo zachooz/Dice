@@ -4,7 +4,7 @@ int dieY = theSize/2;
 int total = 0;
 boolean show = false;
 
-Die[] diceArray = new Die[41415];
+Die[] diceArray = new Die[41917];
 int diceCount = 0;
 
 
