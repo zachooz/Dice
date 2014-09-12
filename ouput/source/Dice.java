@@ -20,7 +20,7 @@ int dieY = theSize/2;
 int total = 0;
 boolean show = false;
 
-Die[] diceArray = new Die[41917];
+Die[] diceArray = new Die[41750];
 int diceCount = 0;
 
 
@@ -58,13 +58,13 @@ public void mousePressed() {
 	background(0,0,0);
 	diceCount = 0;
 	total = 0;
-	int dieX = -theSize/2;
+	int dieX = theSize/2;
 	int dieY = theSize/2;
 	for(int i = 0; i<diceArray.length; i++){
-		if(dieX + theSize < 1000){
+		if(dieX + 1.5f*theSize<= 1000){
 			dieX +=  theSize;
 		} else {
-			dieX =  -theSize/2;
+			dieX =  theSize/2;
 			dieY += theSize;
 		}
 		diceArray[diceCount] =  new Die((int) (Math.random() * 6 + 1), dieX, dieY);
