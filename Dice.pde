@@ -2,9 +2,9 @@ int theSize = 4;
 int dieX = 0;
 int dieY = theSize/2;
 int total = 0;
-boolean show = true;
+boolean show = false;
 
-Die[] diceArray = new Die[38937];
+Die[] diceArray = new Die[41415];
 int diceCount = 0;
 
 
@@ -30,7 +30,7 @@ void draw(){
 }
 
 void setup() {
-  size(990, 630);
+  size(1000, 660);
   background(0,0,0);
   frameRate(500000);
   noStroke();
@@ -45,7 +45,7 @@ void mousePressed() {
 	int dieX = -theSize/2;
 	int dieY = theSize/2;
 	for(int i = 0; i<diceArray.length; i++){
-		if(dieX + theSize < 990){
+		if(dieX + theSize < 1000){
 			dieX +=  theSize;
 		} else {
 			dieX =  -theSize/2;

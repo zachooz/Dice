@@ -14,12 +14,13 @@ import java.io.IOException;
 
 public class Dice extends PApplet {
 
-int theSize = 5;
+int theSize = 4;
 int dieX = 0;
 int dieY = theSize/2;
 int total = 0;
+boolean show = false;
 
-Die[] diceArray = new Die[18359];
+Die[] diceArray = new Die[41415];
 int diceCount = 0;
 
 
@@ -30,7 +31,7 @@ public class Die{
 	int xPos;
 	int yPos;
 	Die(int side, int xPos, int yPos){
-		this.diceSize = 5;
+		this.diceSize = 4;
 		this.side = side;
 		this.xPos = xPos;
 		this.yPos = yPos;
@@ -40,12 +41,12 @@ public void draw(){
 	if(total == 0){
 		textSize(30);
 		fill(255,255,255);
-		text("Click to spawn "+ diceArray.length+ " dice!", width/3, height/2);	
+		text("Click to spawn " + diceArray.length +" dice!", width/3, height/2);	
 	}
 }
 
 public void setup() {
-  size(1000,660);
+  size(1000, 660);
   background(0,0,0);
   frameRate(500000);
   noStroke();
@@ -59,23 +60,28 @@ public void mousePressed() {
 	total = 0;
 	int dieX = -theSize/2;
 	int dieY = theSize/2;
-	for(int i = 0; i<diceArray.length-1; i++){
-		if(dieX + theSize < 995){
-			dieX +=  theSize + 1;
+	for(int i = 0; i<diceArray.length; i++){
+		if(dieX + theSize < 1000){
+			dieX +=  theSize;
 		} else {
 			dieX =  -theSize/2;
-			dieY += theSize + 1;
+			dieY += theSize;
 		}
 		diceArray[diceCount] =  new Die((int) (Math.random() * 6 + 1), dieX, dieY);
 		diceCount++;
 	}
 	drawDice();
 	drawText();
+	if(show){
+		show = false;
+	} else {
+		show =true;
+	}
 }
 
 public void drawDice(){
 	for(int i = 0; i<diceArray.length-1; i++){
-		fill(255,255,255);
+		fill((int)(Math.random()*40+100),(int)(Math.random()*40+100),(int)(Math.random()*40+100));
 		rectMode(CENTER);
 		rect(diceArray[i].xPos, diceArray[i].yPos, diceArray[i].diceSize, diceArray[i].diceSize);
 		total += diceArray[i].side;
@@ -102,7 +108,9 @@ public void drawText(){
 
 	textSize(10);
 	fill(255,255,255);
-	text("Sum: " +  total, width*11.2f/12, height);
+	if(show==true){
+		text("Sum: " + total, width*11.3f/12, height);
+	}
 }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Dice" };
