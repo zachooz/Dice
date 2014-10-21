@@ -45,7 +45,7 @@ void mousePressed() {
 	int dieX = theSize/2;
 	int dieY = theSize/2;
 	for(int i = 0; i<diceArray.length; i++){
-		if(dieX + 1.5*theSize<= 1000){
+		if(dieX + 1.5*theSize<= 1000 && i != 0){
 			dieX +=  theSize;
 		} else {
 			dieX =  theSize/2;
