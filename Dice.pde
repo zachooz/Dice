@@ -46,7 +46,7 @@ void mousePressed() {
 	int dieY = theSize/2;
 	diceArray[diceCount] =  new Die((int) (Math.random() * 6 + 1), dieX, dieY);
 	diceCount++;
-	for(int i = 0; i<diceArray.length; i++){
+	for(int i = 0; i<diceArray.length-1; i++){
 		if(dieX + 1.5*theSize<= 1000){
 			dieX +=  theSize;
 		} else {
